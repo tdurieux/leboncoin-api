@@ -1,6 +1,6 @@
 {
   "name": "leboncoin-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "leboncoin.fr API",
   "main": "./main.js",
   "directories": {
@@ -21,7 +21,8 @@
     "cheerio": "0.19",
     "request": "*",
     "pixel-gif": "*",
-    "html-entities": "*"
+    "html-entities": "*",
+    "iconv-lite": "*"
   },
   "devDependencies": {
     "mocha": "*"
