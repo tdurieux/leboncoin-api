@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - '5.0'
+
+branches:
+  only:
+    - master
+
+script:
+  - "npm test"

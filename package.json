@@ -1,0 +1,36 @@
+{
+  "name": "leboncoin-api",
+  "version": "0.0.1",
+  "description": "leboncoin.fr API",
+  "main": "./main.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tdurieux/leboncoin-api"
+  },
+  "bugs": {
+    "url": "https://github.com/tdurieux/leboncoin-api/issues"
+  },
+  "dependencies": {
+    "cheerio": "0.19",
+    "request": "*",
+    "pixel-gif": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "keywords": [
+    "le bon coin",
+    "leboncoin",
+    "leboncoin.fr"
+  ],
+  "author": "Thomas Durieux",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

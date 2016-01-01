@@ -1,0 +1,1 @@
+module.exports.Search = require('./lib/search').Search;
