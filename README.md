@@ -1,4 +1,8 @@
-# leboncoin-api [![Build Status](https://travis-ci.org/tdurieux/leboncoin-api.svg?branch=master)](https://travis-ci.org/tdurieux/leboncoin-api)
+# leboncoin-api [![Build Status](https://travis-ci.org/tdurieux/leboncoin-api.svg?branch=master)](https://travis-ci.org/tdurieux/leboncoin-api) [![Coverage Status](https://coveralls.io/repos/tdurieux/leboncoin-api/badge.svg?branch=master&service=github)](https://coveralls.io/github/tdurieux/leboncoin-api?branch=master)
+
+[![NPM](https://nodei.co/npm/leboncoin-api.png)](https://nodei.co/npm/leboncoin-api/)
+
+## Install
 
 ```bash
 npm install leboncoin-api
