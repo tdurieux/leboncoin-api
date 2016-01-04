@@ -39,4 +39,26 @@ describe('Search', function() {
 
         done();
     });
+
+
+    it('check search extra', function(done) {
+
+        // without search extra
+        var s = new leboncoin.Search();
+        assert.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0", s.getUrl());
+
+        s = new leboncoin.Search({
+            searchExtras: {
+                ps: 1000, // min price
+                pe: 20000 // max price
+            }
+        });
+        assert.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0&ps=1000&pe=20000", s.getUrl());
+
+        s = new leboncoin.Search()
+                    .addSearchExtra('ps', 1000)
+                    .addSearchExtra('pe', 20000);
+        assert.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0&ps=1000&pe=20000", s.getUrl());
+        done();
+    });
 });
