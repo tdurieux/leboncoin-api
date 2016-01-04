@@ -6,6 +6,15 @@ const item = require("../lib/item.js");
 
 describe('Search', function() {
     describe('GetUrl', function() {
+
+        it('with query', function(done) {
+            var s = new search.Search({
+                query: "rénover OR réhabiliter OR investisseur"
+            });
+            assert.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&q=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&f=a&ur=0&it=0", s.getUrl());
+            done();
+        });
+
         it('check url wihout parameters', function(done) {
             var s = new search.Search();
             assert.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0", s.getUrl());
@@ -77,10 +86,11 @@ describe('Search', function() {
         });
 
         it('Parse Entries', function(done) {
-            const html = '<div class="list-lbc"><a href="http://www.leboncoin.fr/animaux/905817796.htm?ca=17_s" title="Poissons de bassin"><div class="lbc"><div class="date"><div>Aujourd\'hui</div><div>19:08</div></div><div class="image"><div class="image-and-nb"><img src="http://img6.leboncoin.fr/thumbs/881/8815dfeba3260d910f311a7b0d4aed3e1336651f.jpg" alt="Poissons de bassin"><div class="nb"><div class="top radius">&nbsp;</div><div class="value radius">1</div></div></div></div><div class="detail"><h2 class="title">Poissons de bassin</h2><div class="category">Animaux</div><div class="placement">Tressin/Nord</div><div class="price">1&nbsp;&euro;</div></div><div class="clear"></div></div></a><div class="clear"></div><a href="http://www.leboncoin.fr/vetements/877991952.htm?ca=17_s" title="Blouson cuir noir"><div class="lbc"><div class="date"><div>Aujourd\'hui</div><div>19:08</div></div><div class="image"><div class="image-and-nb"><img src="http://img2.leboncoin.fr/thumbs/bd7/bd70484d4ab2e95496033a30a9732575736c2eac.jpg" alt="Blouson cuir noir"><div class="nb"><div class="top radius">&nbsp;</div><div class="value radius">1</div></div></div></div><div class="detail"><h2 class="title">Blouson cuir noir</h2><div class="category">V&ecirc;tements</div><div class="placement">Tatinghem/Pas-de-Calais</div><div class="price">20&nbsp;&euro;</div></div><div class="clear"></div></div></a></div>';
+            const html = '<div class="list-lbc"><a href="http://www.leboncoin.fr/animaux/905817796.htm?ca=17_s" title="Poissons de bassin"><div class="lbc"><div class="date"><div>Aujourd\'hui</div><div>19:08</div></div><div class="image"><div class="image-and-nb"><img src="http://img6.leboncoin.fr/thumbs/881/8815dfeba3260d910f311a7b0d4aed3e1336651f.jpg" alt="Poissons de bassin"><div class="nb"><div class="top radius">&nbsp;</div><div class="value radius">1</div></div></div></div><div class="detail"><h2 class="title">Poissons de bassin</h2><div class="category">Animaux</div><div class="placement">Tressin/Nord</div><div class="price">1&nbsp;&euro;</div></div><div class="clear"></div></div></a><div class="clear"></div><a href="http://www.leboncoin.fr/vetements/877991952.htm?ca=17_s" title="Blouson cuir noir"><div class="lbc"><div class="date"><div>Hier</div><div>19:08</div></div><div class="image"><div class="image-and-nb"><img src="http://img2.leboncoin.fr/thumbs/bd7/bd70484d4ab2e95496033a30a9732575736c2eac.jpg" alt="Blouson cuir noir"><div class="nb"><div class="top radius">&nbsp;</div><div class="value radius">1</div></div></div></div><div class="detail"><h2 class="title">Blouson cuir noir</h2><div class="category">V&ecirc;tements</div><div class="placement">Tatinghem/Pas-de-Calais</div><div class="price">20&nbsp;&euro;</div></div><div class="clear"></div></div></a></div>';
             const $ = cheerio.load(html);
             var results = search.parseEntries($);
             assert.equal(2, results.length);
+            
             assert.equal('Poissons de bassin', results[0].title);
             assert.equal('Animaux', results[0].category);
             assert.equal('http://www.leboncoin.fr/animaux/905817796.htm?ca=17_s', results[0].link);
@@ -92,6 +102,10 @@ describe('Search', function() {
             assert.equal(19, results[0].date.getHours());
             assert.equal(8, results[0].date.getMinutes());
             assert.equal(905817796, results[0].id);
+
+            var yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            assert.equal(yesterday.getDate(), results[1].date.getDate());
             done();
         });
     });
