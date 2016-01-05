@@ -8,6 +8,12 @@
 npm install leboncoin-api
 ```
 
+## Features
+
+* Search on leboncoin.fr with all functionality available leboncoin.fr
+* Get the detailed page of an item
+* Get the phone number of the seller (convert the image to string) **/!\ This API have an unknown usage limit**
+
 ## Usage
 
 ```javascript
