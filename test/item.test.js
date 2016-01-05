@@ -31,7 +31,7 @@ describe('Item', function() {
             const $ = cheerio.load(html);
             var title = item.parseTitle($);
             title.should.equal('Maison 3-4chbres à rénover sur 1100m²');
-            done()
+            done();
         });
 
         it('parse Description', function(done) {
@@ -39,7 +39,15 @@ describe('Item', function() {
             const $ = cheerio.load(html);
             var description = item.parseDescription($);
             description.should.equal('Maison dans un quartier calme, à rénover, avec dupotentiel; actuellement constituée de 2 logementsindépendants (qui peuvent être réunis), elle offresur env. 100 m²hab. :<br>- Sous-sol complet : garage (avec chaudière aufuel) et autre pièce (cave)<br>- Rez-de-chaussée surélevé : entrée, WC, cuisine, salle (avec baie ouvrant sur un balcon), 2chambres parquetées, dégagement , salle de bains.<br>- A l\'étage (accès par escalier extérieur)légèrement mansardé : salle, chambre, cuisine etsalle d\'eau avec WC.<br>Terrain tout autour  d\'environ 1.100m² .Huisseries en PVC.');
-            done()
+            done();
+        });
+
+        it('parse Seller', function(done) {
+            var html = '<div class="upload_by"> <a rel="nofollow" href="http://www2.leboncoin.fr/ar?ca=12_s&amp;id=905932282" onclick="return xt_click(this,\'C\',\'0\',\'utilisateur_v2\',\'N\')">sailor</a>- Mise en ligne le 4 janvier à 23:34. </div>';
+            const $ = cheerio.load(html);
+            var seller = item.parseSeller($);
+            seller.should.equal('sailor');
+            done();
         });
 
         it('parse Table data', function(done) {
@@ -57,7 +65,7 @@ describe('Item', function() {
             data.should.have.property('classe énergie', 'F');
 
             data.city.should.equal('Mézidon-Canon');
-            done()
+            done();
         });
 
         it('parse images', function(done) {
@@ -76,7 +84,7 @@ describe('Item', function() {
 
             images.should.have.length(1);
             images[0].should.equal('http://img5.leboncoin.fr/images/fda/fda1676786d4770ba29d6e7ff328f0d819930a83.jpg');
-            done()
+            done();
         });
     });
 
