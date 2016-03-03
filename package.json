@@ -1,6 +1,6 @@
 {
   "name": "leboncoin-api",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "leboncoin.fr API",
   "main": "./main.js",
   "directories": {
