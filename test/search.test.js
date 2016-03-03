@@ -78,56 +78,50 @@ describe('Search', function() {
 
     describe('Parsers', function() {
         it('Parse NbResult', function(done) {
-            const html = '<nav><ul class="navlist type"><li class="selected"><span class="name">Toutes</span><span class="value">1 - 35 de <b>2 109 564</b></span></li><li><a title="Afficher uniquement les annonces de Particuliers" href="http://www.leboncoin.fr/annonces/offres/nord_pas_de_calais/?f=p"><span class="name">Particuliers</span><span class="value">1 993 971 annonces</span></a></li><li><a title="Afficher uniquement les annonces de Professionnels" href="http://www.leboncoin.fr/annonces/offres/nord_pas_de_calais/?f=c"><span class="name">Professionnels</span><span class="value">115 593 annonces</span></a></li></ul></nav>';
+            const html = '<header class="tabsHeader clearfix"><nav class="fl"><a href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1" title="Afficher toutes les annonces" class="tabsSwitch trackable active" data-info=\'{"event_name" : "ad_search::onglet::toutes_les_annonces", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Toutes<span class="tabsSwitchNumbers small-hidden tiny-hidden"> 21 661</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1&amp;f=p" title="Afficher uniquement les annonces de Particuliers" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::onglet::particuliers", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Part<span class="custom-medium-hidden">iculiers</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 14 451</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1&amp;f=c" title="Afficher uniquement les annonces de Professionnels" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::onglet::professionnels", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Pro<span class="custom-medium-hidden">fessionnels</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 7 210</span></a></nav><article class="list_properties"> <a title="Trier les annonces par prix" href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1&amp;sp=1" class="trackable" data-info=\'{"event_name" : "ad_search::trier_par_prix", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'><i class="icon-currency-eur"></i>Tri<span class="custom-medium-hidden">er par prix</span></a> </article></header>';
             const $ = cheerio.load(html);
             var nbResult = search.parseNbResult($);
-            nbResult.should.be.exactly(2109564);
+            nbResult.should.be.exactly(21661);
             done();
         });
 
         it('Parse Entries', function(done) {
-            const html = '<div class="list-lbc"><a href="http://www.leboncoin.fr/animaux/905817796.htm?ca=17_s" title="Poissons de bassin"><div class="lbc"><div class="date"><div>Aujourd\'hui</div><div>19:08</div></div><div class="image"><div class="image-and-nb"><img src="http://img6.leboncoin.fr/thumbs/881/8815dfeba3260d910f311a7b0d4aed3e1336651f.jpg" alt="Poissons de bassin"><div class="nb"><div class="top radius">&nbsp;</div><div class="value radius">1</div></div></div></div><div class="detail"><h2 class="title">Poissons de bassin</h2><div class="category">Animaux</div><div class="placement">Tressin/Nord</div><div class="price">1&nbsp;&euro;</div></div><div class="clear"></div></div></a><div class="clear"></div><a href="http://www.leboncoin.fr/vetements/877991952.htm?ca=17_s" title="Blouson cuir noir"><div class="lbc"><div class="date"><div>Hier</div><div>19:08</div></div><div class="image"><div class="image-and-nb"><img src="http://img2.leboncoin.fr/thumbs/bd7/bd70484d4ab2e95496033a30a9732575736c2eac.jpg" alt="Blouson cuir noir"><div class="nb"><div class="top radius">&nbsp;</div><div class="value radius">1</div></div></div></div><div class="detail"><h2 class="title">Blouson cuir noir</h2><div class="category">V&ecirc;tements</div><div class="placement">Tatinghem/Pas-de-Calais</div><div class="price">20&nbsp;&euro;</div></div><div class="clear"></div></div></a></div>';
+            const html = '<section class="list mainList tabs"><!-- Listing filters --><!-- Listing list --><ul class="tabsContent dontSwitch block-white"> <li> <a href="//www.leboncoin.fr/campings/921756076.htm?ca=12_s" title="Location Mobil home, gite, chalet, week&#45;end," class="list_item clearfix trackable" data-info=\'{"event_type" : "selfpromotion", "campaign" : "ad_search", "ad_listid" : "921756076", "ad_location" : "list_content", "ad_position" : "1", "ad_type" : "offres", "ad_offres" : "pro", "ad_options" : "|gallery|ldv|urgent|"}\'> <!-- Listing item image --> <div class="item_image"> <span class="item_imagePic"> <span class="lazyload" style="display:block; width:100%; height:100%;" data-imgSrc="//img1.leboncoin.fr/thumbs/8f1/8f19d808a3d69b3cc49a006a3e74de9cdf6d6e3e.jpg" data-imgAlt="Location Mobil home, gite, chalet, week&#45;end,"></span> </span> <span class="item_imageNumber"> <i class="icon-camera icon-2x nomargin"></i> <span>10</span> </span> </div> <!-- Listing item info --> <section class="item_infos"> <h2 class="item_title"> Location Mobil home, gite, chalet, week&#45;end, </h2> <p class="item_supp"> <span class="ispro">(pro)</span> Campings </p> <p class="item_supp"> Renty / Pas-de-Calais </p> <h3 class="item_price">95&nbsp;&euro; - 155&nbsp;&euro;</h3> <aside class="item_absolute"> <p class="item_supp"> <span class="item_supp emergency"><i class="icon-star"></i>Urgent</span> 28 fév, 23:29 </p> </aside> </section> </a> </li></ul></selection>';
             const $ = cheerio.load(html);
             var results = search.parseEntries($);
 
-            results.should.have.length(2);
+            results.should.have.length(1);
 
-            results[0].should.have.property('title', 'Poissons de bassin');
-            results[0].should.have.property('link', 'http://www.leboncoin.fr/animaux/905817796.htm?ca=17_s');
-            results[0].should.have.property('location', 'Tressin/Nord');
-            results[0].should.have.property('category', 'Animaux');
-            results[0].should.have.property('price', 1);
+            results[0].should.have.property('title', 'Location Mobil home, gite, chalet, week-end,');
+            results[0].should.have.property('link', '//www.leboncoin.fr/campings/921756076.htm?ca=12_s');
+            results[0].should.have.property('location', 'Renty / Pas-de-Calais');
+            results[0].should.have.property('category', 'Campings');
+            results[0].should.have.property('price', 95);
             results[0].should.have.property('images');
 
-            results[0].images[0].should.equal('http://img6.leboncoin.fr/images/881/8815dfeba3260d910f311a7b0d4aed3e1336651f.jpg');
-            should(results[0].urgent).be.false();
+            results[0].images[0].should.equal('//img1.leboncoin.fr/images/8f1/8f19d808a3d69b3cc49a006a3e74de9cdf6d6e3e.jpg');
+            should(results[0].urgent).be.true();
 
             results[0].should.have.property('date');
-            results[0].date.getDate().should.be.exactly(new Date().getDate());
-            results[0].date.getHours().should.be.exactly(19);
-            results[0].date.getMinutes().should.be.exactly(8);
+            results[0].date.getDate().should.be.exactly(28);
+            results[0].date.getMonth().should.be.exactly(1); // February
+            results[0].date.getHours().should.be.exactly(23);
+            results[0].date.getMinutes().should.be.exactly(29);
 
-            results[0].id.should.be.exactly(905817796);
-
-            var yesterday = new Date();
-            yesterday.setDate(yesterday.getDate() - 1);
-            results[1].date.getDate().should.equal(yesterday.getDate())
+            results[0].id.should.be.exactly(921756076);
             done();
         });
     });
     
-    /*
-    This test does not work on travis
+    
     describe('Run', function() {
         it('Run without parameters', function(done) {
             new search.Search().run().then(function (data) {
-                assert.equal(1, data.page);
-                assert.equal(true, data.nbResult > 0);
+                data.page.should.be.exactly(1);
                 done();
             }, function (err) {
                 done(err);
             });
         });
     });
-    */
 });
