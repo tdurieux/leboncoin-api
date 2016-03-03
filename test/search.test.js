@@ -115,6 +115,7 @@ describe('Search', function() {
     
     
     describe('Run', function() {
+        this.timeout(50000);
         it('Run without parameters', function(done) {
             new search.Search().run().then(function (data) {
                 data.page.should.be.exactly(1);

@@ -58,7 +58,8 @@ describe('Item', function() {
     });
 
     describe('getDetails', function() {
-        it('Run without parameters', function(done) {
+        this.timeout(500000);
+        it('Get the details of an item', function(done) {
             new search.Search().run().then(function (data) {
                 data.results[0].getDetails().then(function (data) {
                     data.should.have.property('images');
@@ -66,7 +67,9 @@ describe('Item', function() {
                     data.should.have.property('title');
                     data.should.have.property('id');
                     done()
-                }, done)
+                }, function (err) {
+                    done(err);
+                });
             }, function (err) {
                 done(err);
             });
