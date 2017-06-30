@@ -50,7 +50,6 @@ describe('Item', function() {
 
         it('parse images', function(done) {
             var images = item.parseImages($);
-            console.log(images)
             images.should.have.length(4);
             images[0].should.equal('//img4.leboncoin.fr/ad-large/2c67aa36f185a74dbbfc2b85cf8454d1883203b8.jpg');
             done();
