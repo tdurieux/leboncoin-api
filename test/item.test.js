@@ -76,26 +76,20 @@ describe('Item', function() {
     });
 
     describe('GetPhoneNumber', function() {
-        it('parsePhoneNumberImage 1', function(done) {
-            item.parsePhoneNumberImage('./test/assets/phone1.gif').then(function (phoneNumber) {
-                phoneNumber.should.equal("0609064893");
-                done();
-            }, done);
+        this.timeout(500000);
+        it('get phone number 1', function(done) {
+            new search.Search()
+                .setPage(1)
+                .setQuery("renove")
+                .run().then(function (data) {
+                data.results[0].getPhoneNumber().then(function (phone) {
+                    done(null, phone);
+                }, function (err) {
+                    done(err);
+                });
+            }, function (err) {
+                done(err);
+            });
         });
-
-        it('parsePhoneNumberImage 2', function(done) {
-            item.parsePhoneNumberImage('./test/assets/phone2.gif').then(function (phoneNumber) {
-                phoneNumber.should.equal("0672341635");
-                done();
-            }, done);
-        });
-
-        it('parsePhoneNumberImage 3', function(done) {
-            item.parsePhoneNumberImage('./test/assets/phone3.gif').then(function (phoneNumber) {
-                phoneNumber.should.equal("0611404567");
-                done();
-            }, done);
-        });
-
     });
 });
