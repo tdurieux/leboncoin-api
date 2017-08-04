@@ -4,7 +4,7 @@ const should = require('should');
 const user = require("../lib/user.js");
 
 describe('User', function() {
-    this.timeout(50000);
+    this.timeout(500000);
     
     describe('login', function() {
         it('via options', function(done) {
