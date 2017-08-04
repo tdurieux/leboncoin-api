@@ -22,7 +22,7 @@
     "html-entities": "^1.2.0",
     "iconv-lite": "^0.4.13",
     "pixel-gif": "0.0.1",
-    "request": "^2.69.0"
+    "request": "^2.81.0"
   },
   "devDependencies": {
     "mocha": "2.3.4",
