@@ -85,6 +85,111 @@ describe('Search', function() {
             done();
         });
 
+        it('Parse Page Count', function(done) {
+            const html = `
+    <!--Pagination links-->
+    <div class="pagination_links clearfix small-hidden tiny-hidden">
+        <div class="pagination_links_container">
+
+        <!-- First page -->
+        
+                
+                    <a href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=1&amp;q=piano" class="element page static" id="begin"><i class="icon-chevron-double-left nomargin"></i></a>
+                
+        
+
+        <!-- Previous page -->
+        
+            
+                <a href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=19&amp;q=piano" class="element page static" id="previous"><i class="icon-chevron-left nomargin"></i></a>
+            
+        
+
+        <!-- Loop for generate pages -->
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=19&amp;q=piano">19</a>
+            
+        
+            <span class="element page selected">20</span>
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=21&amp;q=piano">21</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=22&amp;q=piano">22</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=23&amp;q=piano">23</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=24&amp;q=piano">24</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=25&amp;q=piano">25</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=26&amp;q=piano">26</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=27&amp;q=piano">27</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=28&amp;q=piano">28</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=29&amp;q=piano">29</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=30&amp;q=piano">30</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=31&amp;q=piano">31</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=32&amp;q=piano">32</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=33&amp;q=piano">33</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=34&amp;q=piano">34</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=35&amp;q=piano">35</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=36&amp;q=piano">36</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=37&amp;q=piano">37</a>
+            
+        
+                <a class="element page" href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=38&amp;q=piano">38</a>
+            
+        
+
+        <!-- Next page -->
+        
+            
+                <a href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=21&amp;q=piano" class="element page static" id="next"><i class="icon-chevron-right nomargin"></i></a>
+            
+        
+
+        <!-- Last page -->
+        
+            
+                <a href="//www.leboncoin.fr/annonces/offres/aquitaine/?o=77&amp;q=piano" class="element page static" id="last"><i class="icon-chevron-double-right nomargin"></i></a>
+            
+        
+    
+        </div>
+    </div>`;
+            const $ = cheerio.load(html);
+            var nbPages = search.parseNbPages($);
+            nbPages.should.be.exactly(77);
+            done();
+
+        })
+
         it('Parse Entries', function(done) {
             const html = '<section class="list mainList tabs"><!-- Listing filters --><!-- Listing list --><ul class="tabsContent dontSwitch block-white"> <li> <a href="//www.leboncoin.fr/campings/921756076.htm?ca=12_s" title="Location Mobil home, gite, chalet, week&#45;end," class="list_item clearfix trackable" data-info=\'{"event_type" : "selfpromotion", "campaign" : "ad_search", "ad_listid" : "921756076", "ad_location" : "list_content", "ad_position" : "1", "ad_type" : "offres", "ad_offres" : "pro", "ad_options" : "|gallery|ldv|urgent|"}\'> <!-- Listing item image --> <div class="item_image"> <span class="item_imagePic"> <span class="lazyload" style="display:block; width:100%; height:100%;" data-imgSrc="//img1.leboncoin.fr/thumbs/8f1/8f19d808a3d69b3cc49a006a3e74de9cdf6d6e3e.jpg" data-imgAlt="Location Mobil home, gite, chalet, week&#45;end,"></span> </span> <span class="item_imageNumber"> <i class="icon-camera icon-2x nomargin"></i> <span>10</span> </span> </div> <!-- Listing item info --> <section class="item_infos"> <h2 class="item_title"> Location Mobil home, gite, chalet, week&#45;end, </h2> <p class="item_supp"> <span class="ispro">(pro)</span> Campings </p> <p class="item_supp"> Renty / Pas-de-Calais </p> <h3 class="item_price">95&nbsp;&euro; - 155&nbsp;&euro;</h3> <aside class="item_absolute"> <p class="item_supp"> <span class="item_supp emergency"><i class="icon-star"></i>Urgent</span> 28 fév, 23:29 </p> </aside> </section> </a> </li></ul></selection>';
             const $ = cheerio.load(html);
