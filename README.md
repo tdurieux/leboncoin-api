@@ -23,7 +23,7 @@ var search = new leboncoin.Search()
     .setQuery("renove")
     .setFilter(leboncoin.FILTERS.PARTICULIER)
     .setCategory("locations")
-    .setRegion("ilgit se_de_france")
+    .setRegion("ile_de_france")
     .addSearchExtra("mrs", 250) // min rent
     .addSearchExtra("mre", 1250); // min rent
 
