@@ -11,44 +11,50 @@ describe('Search', function() {
             var s = new search.Search({
                 query: "rénover OR réhabiliter OR investisseur"
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&q=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&q=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&f=a&ur=0&it=0");
             done();
         });
 
         it('check url wihout parameters', function(done) {
             var s = new search.Search();
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0");
             done();
         });
 
         it('check url with specified page', function(done) {
             var s = new search.Search()
+                        .setRegion("ile_de_france")
                         .setPage(1);
             s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0");
 
             s = new search.Search({
                 page: 1
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0");
 
             s = new search.Search()
                         .setPage(2);
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=2&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=2&f=a&ur=0&it=0");
 
             s = new search.Search({
                 page: 2
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=2&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=2&f=a&ur=0&it=0");
 
             s = new search.Search()
                         .setPage('aa');
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0");
 
 
             s = new search.Search({
                 page: 'aa'
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0");
+
+            s = new search.Search({
+                page: 'aa'
+            });
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0");
 
             done();
         });
@@ -58,7 +64,7 @@ describe('Search', function() {
 
             // without search extra
             var s = new search.Search();
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0");
 
             s = new search.Search({
                 searchExtras: {
@@ -66,12 +72,12 @@ describe('Search', function() {
                     pe: 20000 // max price
                 }
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0&ps=1000&pe=20000");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0&ps=1000&pe=20000");
 
             s = new search.Search()
                         .addSearchExtra('ps', 1000)
                         .addSearchExtra('pe', 20000);
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/?o=1&f=a&ur=0&it=0&ps=1000&pe=20000");
+            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/?o=1&f=a&ur=0&it=0&ps=1000&pe=20000");
             done();
         });
     });

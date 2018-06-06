@@ -5,7 +5,7 @@ const user = require("../lib/user.js");
 
 describe('User', function() {
     this.timeout(500000);
-    
+    /*
     describe('login', function() {
         it('via options', function(done) {
             
@@ -29,5 +29,5 @@ describe('User', function() {
                 done(error);
             });
         });
-    });
+    });*/
 });
