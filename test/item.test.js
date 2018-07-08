@@ -65,7 +65,7 @@ describe('Item', function() {
         });
     });
 
-    describe('GetPhoneNumber', function() {
+    /*describe('GetPhoneNumber', function() {
         this.timeout(500000);
         it('get phone number 1', function(done) {
             new search.Search()
@@ -81,5 +81,5 @@ describe('Item', function() {
                 done(err);
             });
         });
-    });
+    });*/
 });

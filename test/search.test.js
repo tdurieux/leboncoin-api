@@ -11,44 +11,45 @@ describe('Search', function() {
             var s = new search.Search({
                 query: "rénover OR réhabiliter OR investisseur"
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&q=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&text=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&owner_type=a");
             done();
         });
 
         it('check url wihout parameters', function(done) {
             var s = new search.Search();
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
             done();
         });
 
         it('check url with specified page', function(done) {
             var s = new search.Search()
+                        .setRegion("ile_de_france")
                         .setPage(1);
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a&region=12");
 
             s = new search.Search({
                 page: 1
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
 
             s = new search.Search()
                         .setPage(2);
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=2&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=2&owner_type=a");
 
             s = new search.Search({
                 page: 2
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=2&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=2&owner_type=a");
 
             s = new search.Search()
                         .setPage('aa');
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
 
 
             s = new search.Search({
                 page: 'aa'
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
 
             done();
         });
@@ -58,7 +59,7 @@ describe('Search', function() {
 
             // without search extra
             var s = new search.Search();
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
 
             s = new search.Search({
                 searchExtras: {
@@ -66,19 +67,19 @@ describe('Search', function() {
                     pe: 20000 // max price
                 }
             });
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0&ps=1000&pe=20000");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a&ps=1000&pe=20000");
 
             s = new search.Search()
                         .addSearchExtra('ps', 1000)
                         .addSearchExtra('pe', 20000);
-            s.getUrl().should.equal("http://www.leboncoin.fr/annonces/offres/ile_de_france/occasions?o=1&f=a&ur=0&it=0&ps=1000&pe=20000");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a&ps=1000&pe=20000");
             done();
         });
     });
 
     describe('Parsers', function() {
         it('Parse NbResult', function(done) {
-            const html = '<header class="tabsHeader clearfix"><nav class="fl"><a href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1" title="Afficher toutes les annonces" class="tabsSwitch trackable active" data-info=\'{"event_name" : "ad_search::onglet::toutes_les_annonces", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Toutes<span class="tabsSwitchNumbers small-hidden tiny-hidden"> 21 661</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1&amp;f=p" title="Afficher uniquement les annonces de Particuliers" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::onglet::particuliers", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Part<span class="custom-medium-hidden">iculiers</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 14 451</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1&amp;f=c" title="Afficher uniquement les annonces de Professionnels" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::onglet::professionnels", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Pro<span class="custom-medium-hidden">fessionnels</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 7 210</span></a></nav><article class="list_properties"> <a title="Trier les annonces par prix" href="//www.leboncoin.fr/annonces/offres/ile_de_france/occasions/?ur=1&amp;sp=1" class="trackable" data-info=\'{"event_name" : "ad_search::trier_par_prix", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'><i class="icon-currency-eur"></i>Tri<span class="custom-medium-hidden">er par prix</span></a> </article></header>';
+            const html = '<header class="tabsHeader clearfix"><nav class="fl"><a href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1" title="Afficher toutes les annonces" class="tabsSwitch trackable active" data-info=\'{"event_name" : "ad_search::onglet::toutes_les_annonces", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Toutes<span class="tabsSwitchNumbers small-hidden tiny-hidden"> 21 661</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1&amp;f=p" title="Afficher uniquement les annonces de Particuliers" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::onglet::particuliers", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Part<span class="custom-medium-hidden">iculiers</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 14 451</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1&amp;f=c" title="Afficher uniquement les annonces de Professionnels" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::onglet::professionnels", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Pro<span class="custom-medium-hidden">fessionnels</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 7 210</span></a></nav><article class="list_properties"> <a title="Trier les annonces par prix" href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1&amp;sp=1" class="trackable" data-info=\'{"event_name" : "ad_search::trier_par_prix", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'><i class="icon-currency-eur"></i>Tri<span class="custom-medium-hidden">er par prix</span></a> </article></header>';
             const $ = cheerio.load(html);
             var nbResult = search.parseNbResult($);
             nbResult.should.be.exactly(21661);
