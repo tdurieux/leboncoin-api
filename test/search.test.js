@@ -3,6 +3,7 @@ const should = require('should');
 
 const search = require("../lib/search.js");
 const item = require("../lib/item.js");
+const filters = require("../lib/filters.js");
 
 describe('Search', function() {
     describe('GetUrl', function() {
@@ -11,13 +12,22 @@ describe('Search', function() {
             var s = new search.Search({
                 query: "rénover OR réhabiliter OR investisseur"
             });
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&text=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&text=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur");
+            done();
+        });
+
+        it('with filter private', function(done) {
+            var s = new search.Search({
+                query: "rénover OR réhabiliter OR investisseur",
+                filter: filters.PARTICULIER
+            });
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&text=r%C3%A9nover+OR+r%C3%A9habiliter+OR+investisseur&owner_type=private");
             done();
         });
 
         it('check url wihout parameters', function(done) {
             var s = new search.Search();
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1");
             done();
         });
 
@@ -25,31 +35,31 @@ describe('Search', function() {
             var s = new search.Search()
                         .setRegion("ile_de_france")
                         .setPage(1);
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a&region=12");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&region=12");
 
             s = new search.Search({
                 page: 1
             });
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1");
 
             s = new search.Search()
                         .setPage(2);
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=2&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=2");
 
             s = new search.Search({
                 page: 2
             });
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=2&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=2");
 
             s = new search.Search()
                         .setPage('aa');
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1");
 
 
             s = new search.Search({
                 page: 'aa'
             });
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1");
 
             done();
         });
@@ -59,7 +69,7 @@ describe('Search', function() {
 
             // without search extra
             var s = new search.Search();
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1");
 
             s = new search.Search({
                 searchExtras: {
@@ -67,12 +77,12 @@ describe('Search', function() {
                     pe: 20000 // max price
                 }
             });
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a&ps=1000&pe=20000");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&ps=1000&pe=20000");
 
             s = new search.Search()
                         .addSearchExtra('ps', 1000)
                         .addSearchExtra('pe', 20000);
-            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&owner_type=a&ps=1000&pe=20000");
+            s.getUrl().should.equal("https://www.leboncoin.fr/recherche/?page=1&ps=1000&pe=20000");
             done();
         });
     });
@@ -113,7 +123,7 @@ describe('Search', function() {
             done();
         });
     });
-    
+
     
     describe('Run', function() {
         this.timeout(50000);
