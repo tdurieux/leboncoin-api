@@ -3,6 +3,7 @@ const should = require('should');
 
 const search = require("../lib/search.js");
 const item = require("../lib/item.js");
+const filters = require("../lib/filters.js");
 
 describe('Search', function() {
     describe('GetBodyParams', function() {
