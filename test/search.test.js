@@ -1,9 +1,9 @@
-var cheerio = require('cheerio');
-var should = require('should');
+const cheerio = require('cheerio');
+const should = require('should');
 
-var search = require("../lib/search.js");
-var item = require("../lib/item.js");
-var filters = require("../lib/filters.js");
+const search = require("../lib/search.js");
+const item = require("../lib/item.js");
+const filters = require("../lib/filters.js");
 
 describe('Search', function() {
     describe('GetBodyParams', function() {
