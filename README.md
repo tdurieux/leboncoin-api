@@ -24,11 +24,15 @@ var search = new leboncoin.Search()
     .setFilter(leboncoin.FILTERS.PARTICULIER)
     .setCategory("locations")
     .setRegion("ile_de_france")
-    .addSearchExtra("mrs", 250) // min rent
-    .addSearchExtra("mre", 1250); // min rent
+    .setDepartment("yvelines")
+    .addSearchExtra("price", {min: 1500, max: 2000}) // will add a range of price
+    .addSearchExtra('furnished', ["1", "Non meublé"]); // will add enums for Meublé and Non meublé
+
+// Please check into categories & sub categories constants to know which are the sub categories to add into "addSearchExtra"
 
 search.run().then(function (data) {
     console.log(data.page); // the current page
+    console.log(data.pages); // the number of pages
     console.log(data.nbResult); // the number of results for this search
     console.log(data.results); // the array of results
     data.results[0].getDetails().then(function (details) {

@@ -1,0 +1,377 @@
+[
+  {
+    "id": "71",
+    "label": "EMPLOI",
+    "channel": "_emploi_",
+    "subcategories": [
+      {
+        "id": "33",
+        "label": "Offres d'emploi",
+        "channel": "offres_d_emploi"
+      }
+    ]
+  },
+  { 
+    "id": "1",
+    "label": "VEHICULES",
+    "channel": "_vehicules_",
+    "subcategories": [
+      {
+        "id": "2",
+        "label": "Voitures",
+        "channel": "voitures"
+      },
+      {
+        "id": "3",
+        "label": "Motos",
+        "channel": "motos"
+      },
+      {
+        "id": "4",
+        "label": "Caravaning",
+        "channel": "caravaning"
+      },
+      {
+        "id": "5",
+        "label": "Utilitaires",
+        "channel": "utilitaires"
+      },
+      {
+        "id": "6",
+        "label": "Equipement Auto",
+        "channel": "equipement_auto"
+      },
+      {
+        "id": "44",
+        "label": "Equipement Moto",
+        "channel": "equipement_moto"
+      },
+      {
+        "id": "50",
+        "label": "Equipement Caravaning",
+        "channel": "equipement_caravaning"
+      },
+      {
+        "id": "7",
+        "label": "Nautisme",
+        "channel": "nautisme"
+      },
+      {
+        "id": "51",
+        "label": "Equipement Nautisme",
+        "channel": "equipement_nautisme"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "label": "IMMOBILIER",
+    "channel": "_immobilier_",
+    "subcategories": [
+      {
+        "id": "9",
+        "label": "Ventes immobilières",
+        "channel": "ventes_immobilieres"
+      },
+      {
+        "id": "10",
+        "label": "Locations",
+        "channel": "locations"
+      },
+      {
+        "id": "11",
+        "label": "Colocations",
+        "channel": "colocations"
+      },
+      {
+        "id": "13",
+        "label": "Bureaux & Commerces",
+        "channel": "bureaux_commerces"
+      }
+    ]
+  },
+  {
+    "id": "66",
+    "label": "VACANCES",
+    "channel": "_vacances_",
+    "subcategories": [
+      {
+        "id": "12",
+        "label": "Locations & Gîtes",
+        "channel": "locations_gites"
+      },
+      {
+        "id": "67",
+        "label": "Chambres d'hôtes",
+        "channel": "chambres_d_hotes"
+      },
+      {
+        "id": "68",
+        "label": "Campings",
+        "channel": "campings"
+      },
+      {
+        "id": "69",
+        "label": "Hôtels",
+        "channel": "hotels"
+      },
+      {
+        "id": "70",
+        "label": "Hébergements insolites",
+        "channel": "hebergements_insolites"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "label": "MULTIMEDIA",
+    "channel": "_multimedia_",
+    "subcategories": [
+      {
+        "id": "15",
+        "label": "Informatique",
+        "channel": "informatique"
+      },
+      {
+        "id": "43",
+        "label": "Consoles & Jeux vidéo",
+        "channel": "consoles_jeux_video"
+      },
+      {
+        "id": "16",
+        "label": "Image & Son",
+        "channel": "image_son"
+      },
+      {
+        "id": "17",
+        "label": "Téléphonie",
+        "channel": "telephonie"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "label": "LOISIRS",
+    "channel": "_loisirs_",
+    "subcategories": [
+      {
+        "id": "25",
+        "label": "DVD / Films",
+        "channel": "dvd_films"
+      },
+      {
+        "id": "26",
+        "label": "CD / Musique",
+        "channel": "cd_musique"
+      },
+      {
+        "id": "27",
+        "label": "Livres",
+        "channel": "livres"
+      },
+      {
+        "id": "28",
+        "label": "Animaux",
+        "channel": "animaux"
+      },
+      {
+        "id": "55",
+        "label": "Vélos",
+        "channel": "velos"
+      },
+      {
+        "id": "29",
+        "label": "Sports & Hobbies",
+        "channel": "sports_hobbies"
+      },
+      {
+        "id": "30",
+        "label": "Instruments de musique",
+        "channel": "instruments_de_musique"
+      },
+      {
+        "id": "40",
+        "label": "Collection",
+        "channel": "collection"
+      },
+      {
+        "id": "41",
+        "label": "Jeux & Jouets",
+        "channel": "jeux_jouets"
+      },
+      {
+        "id": "48",
+        "label": "Vins & Gastronomie",
+        "channel": "vins_gastronomie"
+      }
+    ]
+  },
+  {
+    "id": "56",
+    "label": "MATERIEL PROFESSIONNEL",
+    "channel": "_materiel_professionnel_",
+    "subcategories": [
+      {
+        "id": "57",
+        "label": "Matériel Agricole",
+        "channel": "materiel_agricole"
+      },
+      {
+        "id": "58",
+        "label": "Transport - Manutention",
+        "channel": "transport_manutention"
+      },
+      {
+        "id": "59",
+        "label": "BTP - Chantier Gros-oeuvre",
+        "channel": "btp_chantier_gros_oeuvre"
+      },
+      {
+        "id": "60",
+        "label": "Outillage - Matériaux 2nd-oeuvre",
+        "channel": "outillage_materiaux_2nd_oeuvre"
+      },
+      {
+        "id": "32",
+        "label": "Équipements Industriels",
+        "channel": "equipements_industriels"
+      },
+      {
+        "id": "61",
+        "label": "Restauration - Hôtellerie",
+        "channel": "restauration_hotellerie"
+      },
+      {
+        "id": "62",
+        "label": "Fournitures de Bureau",
+        "channel": "fournitures_de_bureau"
+      },
+      {
+        "id": "63",
+        "label": "Commerces & Marchés",
+        "channel": "commerces_marches"
+      },
+      {
+        "id": "64",
+        "label": "Matériel Médical",
+        "channel": "materiel_medical"
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "label": "SERVICES",
+    "channel": "_services_",
+    "subcategories": [
+      {
+        "id": "34",
+        "label": "Prestations de services",
+        "channel": "prestations_de_services"
+      },
+      {
+        "id": "35",
+        "label": "Billetterie",
+        "channel": "billetterie"
+      },
+      {
+        "id": "49",
+        "label": "Evénements",
+        "channel": "evenements"
+      },
+      {
+        "id": "36",
+        "label": "Cours particuliers",
+        "channel": "cours_particuliers"
+      },
+      {
+        "id": "65",
+        "label": "Covoiturage",
+        "channel": "covoiturage"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "label": "MAISON",
+    "channel": "_maison_",
+    "subcategories": [
+      {
+        "id": "19",
+        "label": "Ameublement",
+        "channel": "ameublement"
+      },
+      {
+        "id": "20",
+        "label": "Electroménager",
+        "channel": "electromenager"
+      },
+      {
+        "id": "45",
+        "label": "Arts de la table",
+        "channel": "arts_de_la_table"
+      },
+      {
+        "id": "39",
+        "label": "Décoration",
+        "channel": "decoration"
+      },
+      {
+        "id": "46",
+        "label": "Linge de maison",
+        "channel": "linge_de_maison"
+      },
+      {
+        "id": "21",
+        "label": "Bricolage",
+        "channel": "bricolage"
+      },
+      {
+        "id": "52",
+        "label": "Jardinage",
+        "channel": "jardinage"
+      },
+      {
+        "id": "22",
+        "label": "Vêtements",
+        "channel": "vetements"
+      },
+      {
+        "id": "53",
+        "label": "Chaussures",
+        "channel": "chaussures"
+      },
+      {
+        "id": "47",
+        "label": "Accessoires & Bagagerie",
+        "channel": "accessoires_bagagerie"
+      },
+      {
+        "id": "42",
+        "label": "Montres & Bijoux",
+        "channel": "montres_bijoux"
+      },
+      {
+        "id": "23",
+        "label": "Equipement bébé",
+        "channel": "equipement_bebe"
+      },
+      {
+        "id": "54",
+        "label": "Vêtements bébé",
+        "channel": "vetements_bebe"
+      }
+    ]
+  },
+  {
+    "id": "37",
+    "label": "--",
+    "channel": "__",
+    "subcategories": [
+      {
+        "id": "38",
+        "label": "Autres",
+        "channel": "autres"
+      }
+    ]
+  }
+]

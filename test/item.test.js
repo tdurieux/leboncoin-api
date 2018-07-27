@@ -45,6 +45,7 @@ describe('Item', function() {
         });
     });
 
+    /**
     describe('getDetails', function() {
         this.timeout(500000);
         it('Get the details of an item', function(done) {
@@ -54,7 +55,7 @@ describe('Item', function() {
                     data.should.have.property('description');
                     data.should.have.property('title');
                     data.should.have.property('id');
-                    console.log(data);
+                    //console.log(data);
                     done()
                 }, function (err) {
                     done(err);
@@ -64,6 +65,7 @@ describe('Item', function() {
             });
         });
     });
+     */
 
     /*describe('GetPhoneNumber', function() {
         this.timeout(500000);

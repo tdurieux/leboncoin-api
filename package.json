@@ -1,6 +1,6 @@
 {
   "name": "leboncoin-api",
-  "version": "0.0.20",
+  "version": "0.0.30",
   "description": "leboncoin.fr API",
   "main": "./main.js",
   "directories": {
@@ -8,7 +8,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test-dev": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "repository": {
     "type": "git",
