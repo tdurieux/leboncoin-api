@@ -1,0 +1,1317 @@
+[
+  {
+    "id": "1",
+    "name": "Ain",
+    "channel": "ain",
+    "region_id": "22",
+    "neighbours": [
+      "1",
+      "38",
+      "39",
+      "69",
+      "71",
+      "73",
+      "74"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Aisne",
+    "channel": "aisne",
+    "region_id": "19",
+    "neighbours": [
+      "2",
+      "8",
+      "51",
+      "59",
+      "60",
+      "77",
+      "80"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Allier",
+    "channel": "allier",
+    "region_id": "3",
+    "neighbours": [
+      "3",
+      "18",
+      "23",
+      "42",
+      "58",
+      "63",
+      "71"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Alpes-de-Haute-Provence",
+    "channel": "alpes_de_haute_provence",
+    "region_id": "21",
+    "neighbours": [
+      "4",
+      "5",
+      "6",
+      "26",
+      "83",
+      "84"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Hautes-Alpes",
+    "channel": "hautes_alpes",
+    "region_id": "21",
+    "neighbours": [
+      "5",
+      "4",
+      "26",
+      "38",
+      "73"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Alpes-Maritimes",
+    "channel": "alpes_maritimes",
+    "region_id": "21",
+    "neighbours": [
+      "6",
+      "4",
+      "83"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Ardèche",
+    "channel": "ardeche",
+    "region_id": "22",
+    "neighbours": [
+      "7",
+      "26",
+      "30",
+      "38",
+      "42",
+      "43",
+      "48",
+      "84"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Ardennes",
+    "channel": "ardennes",
+    "region_id": "8",
+    "neighbours": [
+      "8",
+      "2",
+      "51",
+      "55"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Ariège",
+    "channel": "ariege",
+    "region_id": "16",
+    "neighbours": [
+      "9",
+      "11",
+      "31",
+      "66"
+    ]
+  },
+  {
+    "id": "10",
+    "name": "Aube",
+    "channel": "aube",
+    "region_id": "8",
+    "neighbours": [
+      "10",
+      "21",
+      "51",
+      "52",
+      "77",
+      "89"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Aude",
+    "channel": "aude",
+    "region_id": "13",
+    "neighbours": [
+      "11",
+      "9",
+      "31",
+      "34",
+      "66",
+      "81"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Aveyron",
+    "channel": "aveyron",
+    "region_id": "16",
+    "neighbours": [
+      "12",
+      "15",
+      "30",
+      "34",
+      "46",
+      "48",
+      "81",
+      "82"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Bouches-du-Rhône",
+    "channel": "bouches_du_rhone",
+    "region_id": "21",
+    "neighbours": [
+      "13",
+      "30",
+      "83",
+      "84"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Calvados",
+    "channel": "calvados",
+    "region_id": "4",
+    "neighbours": [
+      "14",
+      "27",
+      "50",
+      "61",
+      "76"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Cantal",
+    "channel": "cantal",
+    "region_id": "3",
+    "neighbours": [
+      "15",
+      "12",
+      "19",
+      "43",
+      "46",
+      "48",
+      "63"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Charente",
+    "channel": "charente",
+    "region_id": "20",
+    "neighbours": [
+      "16",
+      "17",
+      "24",
+      "79",
+      "86",
+      "87"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Charente-Maritime",
+    "channel": "charente_maritime",
+    "region_id": "20",
+    "neighbours": [
+      "17",
+      "16",
+      "24",
+      "33",
+      "79",
+      "85"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Cher",
+    "channel": "cher",
+    "region_id": "7",
+    "neighbours": [
+      "18",
+      "3",
+      "36",
+      "41",
+      "45",
+      "58"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Corrèze",
+    "channel": "correze",
+    "region_id": "14",
+    "neighbours": [
+      "19",
+      "15",
+      "23",
+      "24",
+      "46",
+      "63",
+      "87"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "Côte-d'Or",
+    "channel": "cote_d_or",
+    "region_id": "5",
+    "neighbours": [
+      "21",
+      "10",
+      "39",
+      "52",
+      "58",
+      "70",
+      "71",
+      "89"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "Côtes-d'Armor",
+    "channel": "cotes_d_armor",
+    "region_id": "6",
+    "neighbours": [
+      "22",
+      "29",
+      "35",
+      "56"
+    ]
+  },
+  {
+    "id": "23",
+    "name": "Creuse",
+    "channel": "creuse",
+    "region_id": "14",
+    "neighbours": [
+      "23",
+      "3",
+      "19",
+      "36",
+      "63",
+      "87"
+    ]
+  },
+  {
+    "id": "24",
+    "name": "Dordogne",
+    "channel": "dordogne",
+    "region_id": "2",
+    "neighbours": [
+      "24",
+      "16",
+      "17",
+      "19",
+      "33",
+      "46",
+      "47",
+      "87"
+    ]
+  },
+  {
+    "id": "25",
+    "name": "Doubs",
+    "channel": "doubs",
+    "region_id": "10",
+    "neighbours": [
+      "25",
+      "39",
+      "70",
+      "90"
+    ]
+  },
+  {
+    "id": "26",
+    "name": "Drôme",
+    "channel": "drome",
+    "region_id": "22",
+    "neighbours": [
+      "26",
+      "4",
+      "5",
+      "7",
+      "38",
+      "84"
+    ]
+  },
+  {
+    "id": "27",
+    "name": "Eure",
+    "channel": "eure",
+    "region_id": "11",
+    "neighbours": [
+      "27",
+      "14",
+      "28",
+      "60",
+      "61",
+      "76",
+      "78",
+      "95"
+    ]
+  },
+  {
+    "id": "28",
+    "name": "Eure-et-Loir",
+    "channel": "eure_et_loir",
+    "region_id": "7",
+    "neighbours": [
+      "28",
+      "27",
+      "41",
+      "45",
+      "61",
+      "72",
+      "78",
+      "91"
+    ]
+  },
+  {
+    "id": "29",
+    "name": "Finistère",
+    "channel": "finistere",
+    "region_id": "6",
+    "neighbours": [
+      "29",
+      "22",
+      "56"
+    ]
+  },
+  {
+    "id": "30",
+    "name": "Gard",
+    "channel": "gard",
+    "region_id": "13",
+    "neighbours": [
+      "30",
+      "7",
+      "12",
+      "13",
+      "34",
+      "48",
+      "84"
+    ]
+  },
+  {
+    "id": "31",
+    "name": "Haute-Garonne",
+    "channel": "haute_garonne",
+    "region_id": "16",
+    "neighbours": [
+      "31",
+      "9",
+      "11",
+      "32",
+      "65",
+      "81",
+      "82"
+    ]
+  },
+  {
+    "id": "32",
+    "name": "Gers",
+    "channel": "gers",
+    "region_id": "16",
+    "neighbours": [
+      "32",
+      "31",
+      "40",
+      "47",
+      "64",
+      "65",
+      "82"
+    ]
+  },
+  {
+    "id": "33",
+    "name": "Gironde",
+    "channel": "gironde",
+    "region_id": "2",
+    "neighbours": [
+      "33",
+      "17",
+      "24",
+      "40",
+      "47"
+    ]
+  },
+  {
+    "id": "34",
+    "name": "Hérault",
+    "channel": "herault",
+    "region_id": "13",
+    "neighbours": [
+      "34",
+      "11",
+      "12",
+      "30",
+      "81"
+    ]
+  },
+  {
+    "id": "35",
+    "name": "Ille-et-Vilaine",
+    "channel": "ille_et_vilaine",
+    "region_id": "6",
+    "neighbours": [
+      "35",
+      "22",
+      "44",
+      "49",
+      "50",
+      "53",
+      "56"
+    ]
+  },
+  {
+    "id": "36",
+    "name": "Indre",
+    "channel": "indre",
+    "region_id": "7",
+    "neighbours": [
+      "36",
+      "3",
+      "18",
+      "23",
+      "37",
+      "41",
+      "86",
+      "87"
+    ]
+  },
+  {
+    "id": "37",
+    "name": "Indre-et-Loire",
+    "channel": "indre_et_loire",
+    "region_id": "7",
+    "neighbours": [
+      "37",
+      "36",
+      "41",
+      "49",
+      "72",
+      "86"
+    ]
+  },
+  {
+    "id": "38",
+    "name": "Isère",
+    "channel": "isere",
+    "region_id": "22",
+    "neighbours": [
+      "38",
+      "1",
+      "5",
+      "7",
+      "26",
+      "42",
+      "69",
+      "73"
+    ]
+  },
+  {
+    "id": "39",
+    "name": "Jura",
+    "channel": "jura",
+    "region_id": "10",
+    "neighbours": [
+      "39",
+      "1",
+      "21",
+      "25",
+      "70",
+      "71"
+    ]
+  },
+  {
+    "id": "40",
+    "name": "Landes",
+    "channel": "landes",
+    "region_id": "2",
+    "neighbours": [
+      "40",
+      "32",
+      "33",
+      "47",
+      "64"
+    ]
+  },
+  {
+    "id": "41",
+    "name": "Loir-et-Cher",
+    "channel": "loir_et_cher",
+    "region_id": "7",
+    "neighbours": [
+      "41",
+      "18",
+      "28",
+      "36",
+      "37",
+      "45",
+      "72"
+    ]
+  },
+  {
+    "id": "42",
+    "name": "Loire",
+    "channel": "loire",
+    "region_id": "22",
+    "neighbours": [
+      "42",
+      "3",
+      "7",
+      "26",
+      "38",
+      "43",
+      "63",
+      "69",
+      "71"
+    ]
+  },
+  {
+    "id": "43",
+    "name": "Haute-Loire",
+    "channel": "haute_loire",
+    "region_id": "3",
+    "neighbours": [
+      "43",
+      "7",
+      "15",
+      "42",
+      "48",
+      "63"
+    ]
+  },
+  {
+    "id": "44",
+    "name": "Loire-Atlantique",
+    "channel": "loire_atlantique",
+    "region_id": "18",
+    "neighbours": [
+      "44",
+      "35",
+      "49",
+      "56",
+      "85"
+    ]
+  },
+  {
+    "id": "45",
+    "name": "Loiret",
+    "channel": "loiret",
+    "region_id": "7",
+    "neighbours": [
+      "45",
+      "18",
+      "28",
+      "41",
+      "58",
+      "77",
+      "89",
+      "91"
+    ]
+  },
+  {
+    "id": "46",
+    "name": "Lot",
+    "channel": "lot",
+    "region_id": "16",
+    "neighbours": [
+      "46",
+      "12",
+      "15",
+      "19",
+      "24",
+      "47",
+      "82"
+    ]
+  },
+  {
+    "id": "47",
+    "name": "Lot-et-Garonne",
+    "channel": "lot_et_garonne",
+    "region_id": "2",
+    "neighbours": [
+      "47",
+      "24",
+      "32",
+      "33",
+      "40",
+      "46",
+      "82"
+    ]
+  },
+  {
+    "id": "48",
+    "name": "Lozère",
+    "channel": "lozere",
+    "region_id": "13",
+    "neighbours": [
+      "48",
+      "7",
+      "12",
+      "15",
+      "30",
+      "43"
+    ]
+  },
+  {
+    "id": "49",
+    "name": "Maine-et-Loire",
+    "channel": "maine_et_loire",
+    "region_id": "18",
+    "neighbours": [
+      "49",
+      "35",
+      "37",
+      "44",
+      "53",
+      "72",
+      "79",
+      "85",
+      "86"
+    ]
+  },
+  {
+    "id": "50",
+    "name": "Manche",
+    "channel": "manche",
+    "region_id": "4",
+    "neighbours": [
+      "50",
+      "14",
+      "35",
+      "53",
+      "61"
+    ]
+  },
+  {
+    "id": "51",
+    "name": "Marne",
+    "channel": "marne",
+    "region_id": "8",
+    "neighbours": [
+      "51",
+      "2",
+      "8",
+      "10",
+      "52",
+      "55",
+      "77"
+    ]
+  },
+  {
+    "id": "52",
+    "name": "Haute-Marne",
+    "channel": "haute_marne",
+    "region_id": "8",
+    "neighbours": [
+      "52",
+      "10",
+      "21",
+      "51",
+      "55",
+      "70",
+      "88"
+    ]
+  },
+  {
+    "id": "53",
+    "name": "Mayenne",
+    "channel": "mayenne",
+    "region_id": "18",
+    "neighbours": [
+      "53",
+      "35",
+      "49",
+      "50",
+      "61",
+      "72"
+    ]
+  },
+  {
+    "id": "54",
+    "name": "Meurthe-et-Moselle",
+    "channel": "meurthe_et_moselle",
+    "region_id": "15",
+    "neighbours": [
+      "54",
+      "55",
+      "57",
+      "88"
+    ]
+  },
+  {
+    "id": "55",
+    "name": "Meuse",
+    "channel": "meuse",
+    "region_id": "15",
+    "neighbours": [
+      "55",
+      "8",
+      "51",
+      "52",
+      "54",
+      "88"
+    ]
+  },
+  {
+    "id": "56",
+    "name": "Morbihan",
+    "channel": "morbihan",
+    "region_id": "6",
+    "neighbours": [
+      "56",
+      "22",
+      "29",
+      "35",
+      "44"
+    ]
+  },
+  {
+    "id": "57",
+    "name": "Moselle",
+    "channel": "moselle",
+    "region_id": "15",
+    "neighbours": [
+      "57",
+      "54",
+      "67"
+    ]
+  },
+  {
+    "id": "58",
+    "name": "Nièvre",
+    "channel": "nievre",
+    "region_id": "5",
+    "neighbours": [
+      "58",
+      "3",
+      "18",
+      "21",
+      "45",
+      "71",
+      "89"
+    ]
+  },
+  {
+    "id": "59",
+    "name": "Nord",
+    "channel": "nord",
+    "region_id": "17",
+    "neighbours": [
+      "59",
+      "2",
+      "80",
+      "62"
+    ]
+  },
+  {
+    "id": "60",
+    "name": "Oise",
+    "channel": "oise",
+    "region_id": "19",
+    "neighbours": [
+      "60",
+      "2",
+      "27",
+      "76",
+      "77",
+      "80",
+      "95"
+    ]
+  },
+  {
+    "id": "61",
+    "name": "Orne",
+    "channel": "orne",
+    "region_id": "4",
+    "neighbours": [
+      "61",
+      "14",
+      "27",
+      "28",
+      "50",
+      "53",
+      "72"
+    ]
+  },
+  {
+    "id": "62",
+    "name": "Pas-de-Calais",
+    "channel": "pas_de_calais",
+    "region_id": "17",
+    "neighbours": [
+      "62",
+      "59",
+      "80"
+    ]
+  },
+  {
+    "id": "63",
+    "name": "Puy-de-Dôme",
+    "channel": "puy_de_dome",
+    "region_id": "3",
+    "neighbours": [
+      "63",
+      "3",
+      "15",
+      "19",
+      "23",
+      "42",
+      "43"
+    ]
+  },
+  {
+    "id": "64",
+    "name": "Pyrénées-Atlantiques",
+    "channel": "pyrenees_atlantiques",
+    "region_id": "2",
+    "neighbours": [
+      "64",
+      "32",
+      "40",
+      "65"
+    ]
+  },
+  {
+    "id": "65",
+    "name": "Hautes-Pyrénées",
+    "channel": "hautes_pyrenees",
+    "region_id": "16",
+    "neighbours": [
+      "65",
+      "31",
+      "32",
+      "64"
+    ]
+  },
+  {
+    "id": "66",
+    "name": "Pyrénées-Orientales",
+    "channel": "pyrenees_orientales",
+    "region_id": "13",
+    "neighbours": [
+      "66",
+      "9",
+      "11"
+    ]
+  },
+  {
+    "id": "67",
+    "name": "Bas-Rhin",
+    "channel": "bas_rhin",
+    "region_id": "1",
+    "neighbours": [
+      "67",
+      "57",
+      "68",
+      "88"
+    ]
+  },
+  {
+    "id": "68",
+    "name": "Haut-Rhin",
+    "channel": "haut_rhin",
+    "region_id": "1",
+    "neighbours": [
+      "68",
+      "67",
+      "88",
+      "90"
+    ]
+  },
+  {
+    "id": "69",
+    "name": "Rhône",
+    "channel": "rhone",
+    "region_id": "22",
+    "neighbours": [
+      "69",
+      "1",
+      "38",
+      "42",
+      "71"
+    ]
+  },
+  {
+    "id": "70",
+    "name": "Haute-Saône",
+    "channel": "haute_saone",
+    "region_id": "10",
+    "neighbours": [
+      "70",
+      "21",
+      "25",
+      "52",
+      "88",
+      "90"
+    ]
+  },
+  {
+    "id": "71",
+    "name": "Saône-et-Loire",
+    "channel": "saone_et_loire",
+    "region_id": "5",
+    "neighbours": [
+      "71",
+      "1",
+      "3",
+      "21",
+      "39",
+      "42",
+      "58",
+      "69"
+    ]
+  },
+  {
+    "id": "72",
+    "name": "Sarthe",
+    "channel": "sarthe",
+    "region_id": "18",
+    "neighbours": [
+      "72",
+      "28",
+      "37",
+      "41",
+      "49",
+      "53",
+      "61"
+    ]
+  },
+  {
+    "id": "73",
+    "name": "Savoie",
+    "channel": "savoie",
+    "region_id": "22",
+    "neighbours": [
+      "73",
+      "1",
+      "5",
+      "38",
+      "74"
+    ]
+  },
+  {
+    "id": "74",
+    "name": "Haute-Savoie",
+    "channel": "haute_savoie",
+    "region_id": "22",
+    "neighbours": [
+      "74",
+      "1",
+      "73"
+    ]
+  },
+  {
+    "id": "75",
+    "name": "Paris",
+    "channel": "paris",
+    "region_id": "12",
+    "neighbours": [
+      "75",
+      "92",
+      "93",
+      "94"
+    ]
+  },
+  {
+    "id": "76",
+    "name": "Seine-Maritime",
+    "channel": "seine_maritime",
+    "region_id": "11",
+    "neighbours": [
+      "76",
+      "14",
+      "27",
+      "60",
+      "80"
+    ]
+  },
+  {
+    "id": "77",
+    "name": "Seine-et-Marne",
+    "channel": "seine_et_marne",
+    "region_id": "12",
+    "neighbours": [
+      "77",
+      "2",
+      "10",
+      "45",
+      "51",
+      "60",
+      "89",
+      "91",
+      "93",
+      "94",
+      "95"
+    ]
+  },
+  {
+    "id": "78",
+    "name": "Yvelines",
+    "channel": "yvelines",
+    "region_id": "12",
+    "neighbours": [
+      "78",
+      "27",
+      "28",
+      "91",
+      "92",
+      "95"
+    ]
+  },
+  {
+    "id": "79",
+    "name": "Deux-Sèvres",
+    "channel": "deux_sevres",
+    "region_id": "20",
+    "neighbours": [
+      "79",
+      "16",
+      "17",
+      "49",
+      "85",
+      "86"
+    ]
+  },
+  {
+    "id": "80",
+    "name": "Somme",
+    "channel": "somme",
+    "region_id": "19",
+    "neighbours": [
+      "80",
+      "2",
+      "60",
+      "62",
+      "76"
+    ]
+  },
+  {
+    "id": "81",
+    "name": "Tarn",
+    "channel": "tarn",
+    "region_id": "16",
+    "neighbours": [
+      "81",
+      "11",
+      "12",
+      "31",
+      "34",
+      "82"
+    ]
+  },
+  {
+    "id": "82",
+    "name": "Tarn-et-Garonne",
+    "channel": "tarn_et_garonne",
+    "region_id": "16",
+    "neighbours": [
+      "82",
+      "12",
+      "31",
+      "32",
+      "46",
+      "47",
+      "81"
+    ]
+  },
+  {
+    "id": "83",
+    "name": "Var",
+    "channel": "var",
+    "region_id": "21",
+    "neighbours": [
+      "83",
+      "4",
+      "6",
+      "13",
+      "84"
+    ]
+  },
+  {
+    "id": "84",
+    "name": "Vaucluse",
+    "channel": "vaucluse",
+    "region_id": "21",
+    "neighbours": [
+      "84",
+      "4",
+      "7",
+      "13",
+      "26",
+      "30",
+      "83"
+    ]
+  },
+  {
+    "id": "85",
+    "name": "Vendée",
+    "channel": "vendee",
+    "region_id": "18",
+    "neighbours": [
+      "85",
+      "17",
+      "44",
+      "49",
+      "79"
+    ]
+  },
+  {
+    "id": "86",
+    "name": "Vienne",
+    "channel": "vienne",
+    "region_id": "20",
+    "neighbours": [
+      "86",
+      "16",
+      "37",
+      "36",
+      "49",
+      "79",
+      "87"
+    ]
+  },
+  {
+    "id": "87",
+    "name": "Haute-Vienne",
+    "channel": "haute_vienne",
+    "region_id": "14",
+    "neighbours": [
+      "87",
+      "16",
+      "19",
+      "23",
+      "24",
+      "36",
+      "86"
+    ]
+  },
+  {
+    "id": "88",
+    "name": "Vosges",
+    "channel": "vosges",
+    "region_id": "15",
+    "neighbours": [
+      "88",
+      "52",
+      "54",
+      "55",
+      "67",
+      "68",
+      "70"
+    ]
+  },
+  {
+    "id": "89",
+    "name": "Yonne",
+    "channel": "yonne",
+    "region_id": "5",
+    "neighbours": [
+      "89",
+      "10",
+      "21",
+      "45",
+      "58",
+      "77"
+    ]
+  },
+  {
+    "id": "90",
+    "name": "Territoire de Belfort",
+    "channel": "territoire_de_belfort",
+    "region_id": "10",
+    "neighbours": [
+      "90",
+      "25",
+      "68",
+      "70"
+    ]
+  },
+  {
+    "id": "91",
+    "name": "Essonne",
+    "channel": "essonne",
+    "region_id": "12",
+    "neighbours": [
+      "91",
+      "28",
+      "45",
+      "77",
+      "78",
+      "92",
+      "94"
+    ]
+  },
+  {
+    "id": "92",
+    "name": "Hauts-de-Seine",
+    "channel": "hauts_de_seine",
+    "region_id": "12",
+    "neighbours": [
+      "92",
+      "75",
+      "78",
+      "91",
+      "95",
+      "94"
+    ]
+  },
+  {
+    "id": "93",
+    "name": "Seine-Saint-Denis",
+    "channel": "seine_saint_denis",
+    "region_id": "12",
+    "neighbours": [
+      "93",
+      "75",
+      "77",
+      "92",
+      "94",
+      "95"
+    ]
+  },
+  {
+    "id": "94",
+    "name": "Val-de-Marne",
+    "channel": "val_de_marne",
+    "region_id": "12",
+    "neighbours": [
+      "94",
+      "75",
+      "77",
+      "91",
+      "92",
+      "93"
+    ]
+  },
+  {
+    "id": "95",
+    "name": "Val-d'Oise",
+    "channel": "val_d_oise",
+    "region_id": "12",
+    "neighbours": [
+      "95",
+      "27",
+      "60",
+      "77",
+      "78",
+      "92",
+      "93"
+    ]
+  }
+]

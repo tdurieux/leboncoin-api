@@ -1,0 +1,437 @@
+[
+  {
+    "id": "1",
+    "name": "Alsace",
+    "channel": "alsace",
+    "neighbours": [
+      "1",
+      "10",
+      "15"
+    ],
+    "departments": [
+      "67",
+      "68"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Aquitaine",
+    "channel": "aquitaine",
+    "neighbours": [
+      "2",
+      "14",
+      "16",
+      "20"
+    ],
+    "departments": [
+      "24",
+      "33",
+      "40",
+      "47",
+      "64"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Auvergne",
+    "channel": "auvergne",
+    "neighbours": [
+      "3",
+      "5",
+      "7",
+      "13",
+      "14",
+      "16",
+      "22"
+    ],
+    "departments": [
+      "3",
+      "15",
+      "43",
+      "63"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Basse-Normandie",
+    "channel": "basse_normandie",
+    "neighbours": [
+      "4",
+      "6",
+      "7",
+      "11",
+      "18"
+    ],
+    "departments": [
+      "14",
+      "50",
+      "61"
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Bourgogne",
+    "channel": "bourgogne",
+    "neighbours": [
+      "5",
+      "3",
+      "7",
+      "8",
+      "10",
+      "12",
+      "22"
+    ],
+    "departments": [
+      "21",
+      "58",
+      "71",
+      "89"
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Bretagne",
+    "channel": "bretagne",
+    "neighbours": [
+      "6",
+      "4",
+      "18"
+    ],
+    "departments": [
+      "22",
+      "29",
+      "35",
+      "56"
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Centre",
+    "channel": "centre",
+    "neighbours": [
+      "7",
+      "3",
+      "4",
+      "5",
+      "11",
+      "12",
+      "14",
+      "18",
+      "20"
+    ],
+    "departments": [
+      "18",
+      "28",
+      "36",
+      "37",
+      "41",
+      "45"
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Champagne-Ardenne",
+    "channel": "champagne_ardenne",
+    "neighbours": [
+      "8",
+      "5",
+      "10",
+      "12",
+      "15",
+      "19"
+    ],
+    "departments": [
+      "8",
+      "10",
+      "51",
+      "52"
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Corse",
+    "channel": "corse",
+    "neighbours": [
+      "9"
+    ],
+    "departments": []
+  },
+  {
+    "id": "10",
+    "name": "Franche-Comté",
+    "channel": "franche_comte",
+    "neighbours": [
+      "10",
+      "1",
+      "5",
+      "8",
+      "15",
+      "22"
+    ],
+    "departments": [
+      "25",
+      "39",
+      "70",
+      "90"
+    ]
+  },
+  {
+    "id": "11",
+    "name": "Haute-Normandie",
+    "channel": "haute_normandie",
+    "neighbours": [
+      "11",
+      "4",
+      "7",
+      "12",
+      "19"
+    ],
+    "departments": [
+      "27",
+      "76"
+    ]
+  },
+  {
+    "id": "12",
+    "name": "Ile-de-France",
+    "channel": "ile_de_france",
+    "neighbours": [
+      "12",
+      "5",
+      "7",
+      "8",
+      "11",
+      "19"
+    ],
+    "departments": [
+      "75",
+      "77",
+      "78",
+      "91",
+      "92",
+      "93",
+      "94",
+      "95"
+    ]
+  },
+  {
+    "id": "13",
+    "name": "Languedoc-Roussillon",
+    "channel": "languedoc_roussillon",
+    "neighbours": [
+      "13",
+      "3",
+      "16",
+      "21",
+      "22"
+    ],
+    "departments": [
+      "11",
+      "30",
+      "34",
+      "48",
+      "66"
+    ]
+  },
+  {
+    "id": "14",
+    "name": "Limousin",
+    "channel": "limousin",
+    "neighbours": [
+      "14",
+      "2",
+      "3",
+      "7",
+      "16",
+      "20"
+    ],
+    "departments": [
+      "19",
+      "23",
+      "87"
+    ]
+  },
+  {
+    "id": "15",
+    "name": "Lorraine",
+    "channel": "lorraine",
+    "neighbours": [
+      "15",
+      "1",
+      "8",
+      "10"
+    ],
+    "departments": [
+      "54",
+      "55",
+      "57",
+      "88"
+    ]
+  },
+  {
+    "id": "16",
+    "name": "Midi-Pyrénées",
+    "channel": "midi_pyrenees",
+    "neighbours": [
+      "16",
+      "2",
+      "3",
+      "13",
+      "14"
+    ],
+    "departments": [
+      "9",
+      "12",
+      "31",
+      "32",
+      "46",
+      "65",
+      "81",
+      "82"
+    ]
+  },
+  {
+    "id": "17",
+    "name": "Nord-Pas-de-Calais",
+    "channel": "nord_pas_de_calais",
+    "neighbours": [
+      "17",
+      "19"
+    ],
+    "departments": [
+      "59",
+      "62"
+    ]
+  },
+  {
+    "id": "18",
+    "name": "Pays de la Loire",
+    "channel": "pays_de_la_loire",
+    "neighbours": [
+      "18",
+      "4",
+      "6",
+      "7",
+      "20"
+    ],
+    "departments": [
+      "44",
+      "49",
+      "53",
+      "72",
+      "85"
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Picardie",
+    "channel": "picardie",
+    "neighbours": [
+      "19",
+      "8",
+      "11",
+      "12",
+      "17"
+    ],
+    "departments": [
+      "2",
+      "60",
+      "80"
+    ]
+  },
+  {
+    "id": "20",
+    "name": "Poitou-Charentes",
+    "channel": "poitou_charentes",
+    "neighbours": [
+      "20",
+      "2",
+      "7",
+      "14",
+      "18"
+    ],
+    "departments": [
+      "16",
+      "17",
+      "79",
+      "86"
+    ]
+  },
+  {
+    "id": "21",
+    "name": "Provence-Alpes-Côte d'Azur",
+    "channel": "provence_alpes_cote_d_azur",
+    "neighbours": [
+      "21",
+      "13",
+      "22"
+    ],
+    "departments": [
+      "4",
+      "5",
+      "6",
+      "13",
+      "83",
+      "84"
+    ]
+  },
+  {
+    "id": "22",
+    "name": "Rhône-Alpes",
+    "channel": "rhone_alpes",
+    "neighbours": [
+      "22",
+      "3",
+      "5",
+      "10",
+      "13",
+      "21"
+    ],
+    "departments": [
+      "1",
+      "7",
+      "26",
+      "38",
+      "42",
+      "69",
+      "73",
+      "74"
+    ]
+  },
+  {
+    "id": "23",
+    "name": "Guadeloupe",
+    "channel": "guadeloupe",
+    "neighbours": [
+      "23"
+    ],
+    "departments": []
+  },
+  {
+    "id": "24",
+    "name": "Martinique",
+    "channel": "martinique",
+    "neighbours": [
+      "24"
+    ],
+    "departments": []
+  },
+  {
+    "id": "25",
+    "name": "Guyane",
+    "channel": "guyane",
+    "neighbours": [
+      "25"
+    ],
+    "departments": []
+  },
+  {
+    "id": "26",
+    "name": "Réunion",
+    "channel": "reunion",
+    "neighbours": [
+      "26"
+    ],
+    "departments": []
+  }
+]
