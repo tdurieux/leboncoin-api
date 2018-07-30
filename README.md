@@ -25,6 +25,10 @@ var search = new leboncoin.Search()
     .setCategory("locations")
     .setRegion("ile_de_france")
     .setDepartment("yvelines")
+    .setLocation([
+                 {"zipcode": "78100"},
+                 {"zipcode": "78000"},
+                 ])
     .addSearchExtra("price", {min: 1500, max: 2000}) // will add a range of price
     .addSearchExtra('furnished', ["1", "Non meublé"]); // will add enums for Meublé and Non meublé
 
