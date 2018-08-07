@@ -124,6 +124,19 @@ describe('Search', function() {
 
             done();
         });
+
+        it('check departement', function(done) {
+            var s = new search.Search({
+                category: 2,
+                region : "provence_alpes_cote_d_azur",
+                department : "alpes_maritimes"
+            });
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"21\",\"department\":\"6\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
     });
 
     // describe('Parsers', function() {
