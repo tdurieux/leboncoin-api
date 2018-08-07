@@ -111,6 +111,19 @@ describe('Search', function() {
 
             done();
         });
+
+        it('check title only', function(done) {
+            var s = new search.Search({
+                category: 2,
+                query: "tiger"
+            })
+            .setTitleOnly(true);
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{\"text\":\"tiger\",\"type\":\"subject\"},\"ranges\":{}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
     });
 
     // describe('Parsers', function() {
