@@ -1,6 +1,7 @@
 const cheerio = require('cheerio');
 const should = require('should');
 
+const filter = require('../lib/filters.js');
 const search = require("../lib/search.js");
 const item = require("../lib/item.js");
 
@@ -84,4 +85,92 @@ describe('Item', function() {
             });
         });
     });*/
+
+    it('Get the details of a motobike', function(done) {
+        var input = new item.Item();
+        input.details = {
+            attributes : [
+                { key : "regdate", value : "2018"},
+                { key : "mileage",  value : "40000"},
+                { key : "cubic_capacity",  value : "600"}
+            ]
+        };
+        var output = input.getBike();
+        output.should.have.property('bike');
+        output.bike.should.have.property('regdate').and.be.exactly('2018');
+        output.bike.should.have.property('mileage').and.be.exactly('40000');
+        output.bike.should.have.property('cubic_capacity').and.be.exactly('600');
+        done();
+    });
+
+    it('Get the details of a motobike with missing value', function(done) {
+        var input = new item.Item();
+            input.details = {
+            attributes : [
+                { key : "mileage",  value : "40000"},
+                { key : "cubic_capacity",  value : "600"}
+            ]
+        };
+        var output = input.getBike();
+        output.bike.should.have.property('regdate').and.be.exactly('');
+
+        input.details = {
+            attributes : [
+                { key : "regdate", value : "2018"},
+                { key : "cubic_capacity",  value : "600"}
+            ]
+        };
+        var output = input.getBike();
+        output.bike.should.have.property('mileage').and.be.exactly('');
+
+        input.details = {
+            attributes : [
+                { key : "regdate", value : "2018"},
+                { key : "mileage",  value : "40000"}
+            ]
+        };
+        var output = input.getBike();
+        output.bike.should.have.property('cubic_capacity').and.be.exactly('');
+        done();
+    });
+    
+});
+
+describe('assignMap', function() {
+    describe('assignMap', function() {
+        it('should assign bike property', function(done) {
+            var m = [ { key : "cubic_capacity", value : "600" }, { key : "mileage", value : "10000" }, { key : "regdate", value : "2012" } ];
+            var o = new item.Item();
+
+            o.assignBikeMapDefault(o, m);
+
+            o.should.have.property('cubic_capacity').and.equal('600');
+            o.should.have.property('mileage').and.equal('10000');
+            o.should.have.property('regdate').and.equal('2012');
+
+            done();
+        });
+
+        it('should assign only bike property', function(done) {
+            var m = [ { key : "not_a_bike_property", value : "valeur" } ];
+            var o = new item.Item();
+    
+            o.assignBikeMapDefault(o, m);
+    
+            o.should.not.have.property('not_a_bike_property');
+    
+            done();
+        });
+
+        it('should initialise missing bike property', function(done) {
+            var m = [ { key : "mileage", value : "10000" } ];
+            var o = new item.Item();
+    
+            o.assignBikeMapDefault(o, m);
+    
+            o.should.have.property('regdate').and.equal('');
+    
+            done();
+        });
+    });
 });
