@@ -100,6 +100,17 @@ describe('Search', function() {
             
             done();
         });
+
+        it('check bike criteria', function(done) {
+            var s = new search.Search({
+                category: 2
+            }).setMileAge({min : 20000, max : 30000});
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{\"mileage\":{\"min\":20000,\"max\":30000}}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
     });
 
     // describe('Parsers', function() {
