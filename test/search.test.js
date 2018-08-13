@@ -133,6 +133,25 @@ describe('Search', function() {
             });
             bodyParams = JSON.stringify(s.getBodyParams());
             expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"21\",\"department\":\"6\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+        });
+
+        it('check search with location', function (done) {
+            var s = new search.Search()
+                .setRegion("ile_de_france")
+                .setDepartment("yvelines")
+                .setPage(1);
+
+            var bodyParams = JSON.stringify(s.getBodyParams())
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\",\"department\":\"78\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            var s = new search.Search()
+                .setRegion("ile_de_france")
+                .setLocation([{"zipcode":"78100"}])
+                .setPage(1);
+
+            var bodyParams = JSON.stringify(s.getBodyParams())
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\",\"city_zipcodes\":[{\"zipcode\":\"78100\"}]},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
             bodyParams.should.equal(expectedBodyParams);
 
             done();
