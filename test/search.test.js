@@ -133,6 +133,7 @@ describe('Search', function() {
             });
             bodyParams = JSON.stringify(s.getBodyParams());
             expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"21\",\"department\":\"6\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            done();
         });
 
         it('check search with location', function (done) {
