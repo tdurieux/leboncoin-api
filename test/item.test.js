@@ -1,6 +1,7 @@
 const cheerio = require('cheerio');
 const should = require('should');
 
+const filter = require('../lib/filters.js');
 const search = require("../lib/search.js");
 const item = require("../lib/item.js");
 
@@ -65,7 +66,7 @@ describe('Item', function() {
             });
         });
     });
-     */
+    */
 
     /*describe('GetPhoneNumber', function() {
         this.timeout(500000);
@@ -84,4 +85,5 @@ describe('Item', function() {
             });
         });
     });*/
+    
 });

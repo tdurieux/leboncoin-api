@@ -101,6 +101,41 @@ describe('Search', function() {
             done();
         });
 
+        it('check bike criteria', function(done) {
+            var s = new search.Search({
+                category: 2
+            }).setMileAge({min : 20000, max : 30000});
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{\"mileage\":{\"min\":20000,\"max\":30000}}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
+
+        it('check title only', function(done) {
+            var s = new search.Search({
+                category: 2,
+                query: "tiger"
+            })
+            .setTitleOnly(true);
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{\"text\":\"tiger\",\"type\":\"subject\"},\"ranges\":{}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
+
+        it('check departement', function(done) {
+            var s = new search.Search({
+                category: 2,
+                region : "provence_alpes_cote_d_azur",
+                department : "alpes_maritimes"
+            });
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"21\",\"department\":\"6\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            done();
+        });
+
         it('check search with location', function (done) {
             var s = new search.Search()
                 .setRegion("ile_de_france")
