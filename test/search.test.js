@@ -28,11 +28,11 @@ describe('Search', function() {
             var s = new search.Search()
                         .setRegion("ile_de_france")
                         .setPage(1);
-            
+
             var bodyParams = JSON.stringify(s.getBodyParams())
             var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
             bodyParams.should.equal(expectedBodyParams);
-            
+
 
             s = new search.Search({
                 page: 1
@@ -97,7 +97,7 @@ describe('Search', function() {
             bodyParams = JSON.stringify(s.getBodyParams());
             expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{\"price\":{\"min\":1000,\"max\":20000}}},\"offset\":0}";
             bodyParams.should.equal(expectedBodyParams);
-            
+
             done();
         });
 
@@ -157,6 +157,22 @@ describe('Search', function() {
 
             done();
         });
+
+        it('check search with area', function (done) {
+            var s = new search.Search()
+                .setArea({
+                    "lat": 48.8861712,
+                    "lng": 2.3581992,
+                    "radius": 10000
+                })
+                .setPage(1);
+
+            var bodyParams = JSON.stringify(s.getBodyParams())
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"area\":{\"lat\":48.8861712,\"lng\":2.3581992,\"radius\":10000}},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
     });
 
     // describe('Parsers', function() {
@@ -195,8 +211,8 @@ describe('Search', function() {
     //         done();
     //     });
     // });
-    
-    
+
+
     // describe('Run', function() {
     //     this.timeout(50000);
     //     it('Run without parameters', function(done) {
