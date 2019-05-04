@@ -42,9 +42,6 @@ var search = new leboncoin.Search()
 
 // Please check into categories & sub categories constants to know which are the sub categories to add into "addSearchExtra"
 
-    
-
-
 search.run().then(function (data) {
     console.log(data.page); // the current page
     console.log(data.pages); // the number of pages
