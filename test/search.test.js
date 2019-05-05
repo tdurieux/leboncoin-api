@@ -175,6 +175,34 @@ describe('Search', function() {
         });
     });
 
+    
+    describe('SetCategory', function() {
+
+        it('check when category is a number', function(done) {
+            var s = new search.Search();
+            s.setCategory(5);
+            
+            s.category.should.equal(5);
+            done();
+        });
+
+        it('check when category is a sub category name', function(done) {
+            var s = new search.Search();
+            s.setCategory('electromenager');
+            
+            s.category.should.equal('20');
+            done();
+        });
+
+        it('check when category is a main category name', function(done) {
+            var s = new search.Search();
+            s.setCategory('_maison_');
+            
+            s.category.should.equal('18');
+            done();
+        });
+    });
+
     // describe('Parsers', function() {
     //     it('Parse NbResult', function(done) {
     //         var html = '<header class="tabsHeader clearfix"><nav class="fl"><a href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1" title="Afficher toutes les annonces" class="tabsSwitch trackable active" data-info=\'{"event_name" : "ad_search::ongvar::toutes_les_annonces", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Toutes<span class="tabsSwitchNumbers small-hidden tiny-hidden"> 21 661</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1&amp;f=p" title="Afficher uniquement les annonces de Particuliers" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::ongvar::particuliers", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Part<span class="custom-medium-hidden">iculiers</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 14 451</span></a><a href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1&amp;f=c" title="Afficher uniquement les annonces de Professionnels" class="tabsSwitch trackable" data-info=\'{"event_name" : "ad_search::ongvar::professionnels", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'>Pro<span class="custom-medium-hidden">fessionnels</span><span class="tabsSwitchNumbers small-hidden tiny-hidden"> 7 210</span></a></nav><article class="list_properties"> <a title="Trier les annonces par prix" href="//www.leboncoin.fr/annonces/offres/ile_de_france//?ur=1&amp;sp=1" class="trackable" data-info=\'{"event_name" : "ad_search::trier_par_prix", "event_type" : "click", "event_s2" : "8", "click_type" : "N"}\'><i class="icon-currency-eur"></i>Tri<span class="custom-medium-hidden">er par prix</span></a> </article></header>';
