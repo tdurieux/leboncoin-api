@@ -36,7 +36,7 @@ var search = new leboncoin.Search()
     //Add sort, two kind date or price and two ways asc or desc
     //Exemple for a sort by date asc (older the first)
     //.setSort({sort_by:"date",sort_order:"asc"})
-
+    
     .addSearchExtra("price", {min: 1500, max: 2000}) // will add a range of price
     .addSearchExtra('furnished', ["1", "Non meublé"]); // will add enums for Meublé and Non meublé
 
