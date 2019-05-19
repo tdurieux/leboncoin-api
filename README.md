@@ -2,6 +2,10 @@
 
 [![NPM](https://nodei.co/npm/leboncoin-api.png)](https://nodei.co/npm/leboncoin-api/)
 
+## Documentation
+
+The documentation of the library is available here: https://durieux.me/projects/leboncoin.html.
+
 ## Install
 
 ```bash
