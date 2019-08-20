@@ -4,7 +4,7 @@
 
 
 
-**/!\ leboncoin.fr is using DataDome to protect his API from library likes this one, it is library is not reliable in production anymore **
+**/!\ leboncoin.fr is using DataDome to protect his API from library likes this one, it is library is not reliable in production anymore /!\\**
 
 ## Documentation
 
