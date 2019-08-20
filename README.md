@@ -2,6 +2,10 @@
 
 [![NPM](https://nodei.co/npm/leboncoin-api.png)](https://nodei.co/npm/leboncoin-api/)
 
+
+
+**/!\ leboncoin.fr is using DataDome to protect his API from library likes this one, it is library is not reliable in production anymore **
+
 ## Documentation
 
 The documentation of the library is available here: https://durieux.me/projects/leboncoin.html.
