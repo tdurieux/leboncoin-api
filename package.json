@@ -19,13 +19,14 @@
     "url": "https://github.com/tdurieux/leboncoin-api/issues"
   },
   "dependencies": {
+    "lodash": "^4.17.15",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "mocha": "2.3.4",
-    "coveralls": "2.11.6",
-    "istanbul": "0.4.1",
-    "should": "8.0.2"
+    "coveralls": "^3.0.6",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.0",
+    "should": "^13.2.3"
   },
   "keywords": [
     "le bon coin",

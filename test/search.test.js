@@ -1,6 +1,3 @@
-const cheerio = require('cheerio');
-const should = require('should');
-
 const search = require("../lib/search.js");
 const item = require("../lib/item.js");
 const filters = require("../lib/filters.js");
