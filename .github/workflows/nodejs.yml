@@ -1,10 +1,10 @@
 name: Node CI
 
 on: 
-  - push:
+  push:
     branches:
       - master
-  - schedule:
+  schedule:
     - cron: 0 2 * * *
 
 jobs:
