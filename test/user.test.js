@@ -1,11 +1,9 @@
-const cheerio = require('cheerio');
-const should = require('should');
-
 const user = require("../lib/user.js");
+const item = require("../lib/item.js");
 
 describe('User', function() {
     this.timeout(500000);
-    /*
+    
     describe('login', function() {
         it('via options', function(done) {
             
@@ -29,5 +27,5 @@ describe('User', function() {
                 done(error);
             });
         });
-    });*/
+    });
 });

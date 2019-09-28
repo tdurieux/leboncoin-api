@@ -1,6 +1,3 @@
-const cheerio = require('cheerio');
-const should = require('should');
-
 const search = require("../lib/search.js");
 const item = require("../lib/item.js");
 const filters = require("../lib/filters.js");
@@ -13,14 +10,14 @@ describe('Search', function() {
                 query: "rénover OR réhabiliter OR investisseur"
             });
             var bodyParams = JSON.stringify(s.getBodyParams())
-            bodyParams.should.equal("{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{\"text\":\"rénover OR réhabiliter OR investisseur\"},\"ranges\":{}},\"offset\":0}");
+            bodyParams.should.equal("{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{\"text\":\"rénover OR réhabiliter OR investisseur\"},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}");
             done();
         });
 
         it('check url wihout parameters', function(done) {
             var s = new search.Search();
             var bodyParams = JSON.stringify(s.getBodyParams())
-            bodyParams.should.equal("{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0}");
+            bodyParams.should.equal("{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}");
             done();
         });
 
@@ -28,43 +25,43 @@ describe('Search', function() {
             var s = new search.Search()
                         .setRegion("ile_de_france")
                         .setPage(1);
-            
+
             var bodyParams = JSON.stringify(s.getBodyParams())
-            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\"},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
-            
+
 
             s = new search.Search({
                 page: 1
             });
             bodyParams = JSON.stringify(s.getBodyParams())
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             s = new search.Search()
                         .setPage(2);
             bodyParams = JSON.stringify(s.getBodyParams())
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":35}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":35,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             s = new search.Search({
                 page: 2
             });
             bodyParams = JSON.stringify(s.getBodyParams())
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":35}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":35,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             s = new search.Search()
                         .setPage('aa');
             bodyParams = JSON.stringify(s.getBodyParams())
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             s = new search.Search({
                 page: 'aa'
             });
             bodyParams = JSON.stringify(s.getBodyParams())
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             done();
@@ -75,7 +72,7 @@ describe('Search', function() {
             // without search extra
             var s = new search.Search();
             var bodyParams = JSON.stringify(s.getBodyParams());
-            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             s = new search.Search({
@@ -84,7 +81,7 @@ describe('Search', function() {
                 }
             });
             bodyParams = JSON.stringify(s.getBodyParams());
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             s = new search.Search({
@@ -95,9 +92,44 @@ describe('Search', function() {
             });
 
             bodyParams = JSON.stringify(s.getBodyParams());
-            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{\"price\":{\"min\":1000,\"max\":20000}}},\"offset\":0}";
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{\"price\":{\"min\":1000,\"max\":20000}}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
-            
+
+            done();
+        });
+
+        it('check bike criteria', function(done) {
+            var s = new search.Search({
+                category: 2
+            }).setMileAge({min : 20000, max : 30000});
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{},\"ranges\":{\"mileage\":{\"min\":20000,\"max\":30000}}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
+
+        it('check title only', function(done) {
+            var s = new search.Search({
+                category: 2,
+                query: "tiger"
+            })
+            .setTitleOnly(true);
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{},\"keywords\":{\"text\":\"tiger\",\"type\":\"subject\"},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
+
+        it('check departement', function(done) {
+            var s = new search.Search({
+                category: 2,
+                region : "provence_alpes_cote_d_azur",
+                department : "alpes_maritimes"
+            });
+            bodyParams = JSON.stringify(s.getBodyParams());
+            expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":2},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"21\",\"department\":\"6\"},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             done();
         });
 
@@ -108,7 +140,7 @@ describe('Search', function() {
                 .setPage(1);
 
             var bodyParams = JSON.stringify(s.getBodyParams())
-            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\",\"department\":\"78\"},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\",\"department\":\"78\"},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
             var s = new search.Search()
@@ -117,9 +149,53 @@ describe('Search', function() {
                 .setPage(1);
 
             var bodyParams = JSON.stringify(s.getBodyParams())
-            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\",\"city_zipcodes\":[{\"zipcode\":\"78100\"}]},\"keywords\":{},\"ranges\":{}},\"offset\":0}";
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"region\":\"12\",\"city_zipcodes\":[{\"zipcode\":\"78100\"}]},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
             bodyParams.should.equal(expectedBodyParams);
 
+            done();
+        });
+
+        it('check search with area', function (done) {
+            var s = new search.Search()
+                .setArea({
+                    "lat": 48.8861712,
+                    "lng": 2.3581992,
+                    "radius": 10000
+                })
+                .setPage(1);
+
+            var bodyParams = JSON.stringify(s.getBodyParams())
+            var expectedBodyParams = "{\"limit\":35,\"filters\":{\"category\":{\"id\":null},\"enums\":{\"ad_type\":[\"offer\"]},\"location\":{\"area\":{\"lat\":48.8861712,\"lng\":2.3581992,\"radius\":10000}},\"keywords\":{},\"ranges\":{}},\"offset\":0,\"owner_type\":null,\"sort_by\":null,\"sort_order\":null}";
+            bodyParams.should.equal(expectedBodyParams);
+
+            done();
+        });
+    });
+
+    
+    describe('SetCategory', function() {
+
+        it('check when category is a number', function(done) {
+            var s = new search.Search();
+            s.setCategory(5);
+            
+            s.category.should.equal(5);
+            done();
+        });
+
+        it('check when category is a sub category name', function(done) {
+            var s = new search.Search();
+            s.setCategory('electromenager');
+            
+            s.category.should.equal('20');
+            done();
+        });
+
+        it('check when category is a main category name', function(done) {
+            var s = new search.Search();
+            s.setCategory('_maison_');
+            
+            s.category.should.equal('18');
             done();
         });
     });
@@ -160,8 +236,8 @@ describe('Search', function() {
     //         done();
     //     });
     // });
-    
-    
+
+
     // describe('Run', function() {
     //     this.timeout(50000);
     //     it('Run without parameters', function(done) {
