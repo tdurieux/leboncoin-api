@@ -4,7 +4,7 @@ const item = require("../lib/item.js");
 describe('User', function() {
     this.timeout(500000);
     
-    describe('login', function() {
+    /*describe('login', function() {
         it('via options', function(done) {
             
             var u = new user.User({"email": "yesef36715@mailnd7.com", "password": "yesef36715@mailnd7.com"});
@@ -27,5 +27,5 @@ describe('User', function() {
                 done(error);
             });
         });
-    });
+    });*/
 });
