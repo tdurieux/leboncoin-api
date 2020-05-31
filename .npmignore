@@ -1,0 +1,7 @@
+.travis.yml
+.github
+.idea
+test
+coverage
+idea
+test*
